@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAPES Pós-Graduação em CC — Visualizações</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- CSS BOLADAO -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- vega lite -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>CAPES — Pós-Graduação em Ciência da Computação no Brasil</h1>
+        <p>9 visualizações exploratórias sobre programas, docentes, produção e impacto acadêmico</p>
+    </header>
+
+    <nav>
+        <a href="#viz01">01 · Níveis</a>
+        <a href="#viz02">02 · Doc. Permanentes</a>
+        <a href="#viz03">03 · Doc. Colaboradores</a>
+        <a href="#viz04">04 · Permanentes × Conf.</a>
+        <a href="#viz05">05 · Qualis A1</a>
+        <a href="#viz06">06 · Qualis A2</a>
+        <a href="#viz07">07 · Dissertações × Teses</a>
+        <a href="#viz08">08 · Top 10 Programas</a>
+        <a href="#viz09">09 · B1 vs B2</a>
+    </nav>
+
+    <main>
+
+
+        <div class="card" id="viz01">
+            <div class="card-header">
+                <span class="card-num">VIZ 01</span>
+                <h2>Distribuição dos Níveis dos Programas</h2>
+            </div>
+            <p class="desc">A distribuição evidencia uma pirâmide de excelência acadêmica: a grande maioria dos
+                programas concentra-se nos níveis inferiores (3 e 4), enquanto pouquíssimos atingem os níveis de
+                excelência máxima (6 e 7). Isso reflete o rigor crescente dos critérios de avaliação da CAPES e a
+                dificuldade de progressão nos estratos superiores da pós-graduação em Ciência da Computação no Brasil.
+            </p>
+            <div class="viz-container" id="chart01"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="card" id="viz02">
+            <div class="card-header">
+                <span class="card-num">VIZ 02</span>
+                <h2>Distribuição de Docentes Permanentes</h2>
+            </div>
+            <p class="desc">O histograma revela uma distribuição assimétrica à direita, com a maioria dos programas
+                operando com um corpo docente permanente reduzido. Poucos programas possuem equipes grandes, o que
+                indica que a capacidade produtiva do sistema é altamente concentrada em um pequeno grupo de instituições
+                com maior infraestrutura e consolidação.</p>
+            <div class="viz-container" id="chart02"></div>
+        </div>
+
+        <!-- 03 -->
+        <div class="card" id="viz03">
+            <div class="card-header">
+                <span class="card-num">VIZ 03</span>
+                <h2>Distribuição de Docentes Colaboradores</h2>
+            </div>
+            <p class="desc">A distribuição dos docentes colaboradores é ainda mais concentrada próxima ao zero do que a
+                dos permanentes, indicando que a maioria dos programas conta com poucos ou nenhum colaborador externo.
+                Programas com maior número de colaboradores são exceção, sugerindo que parcerias interinstitucionais
+                ainda são pouco exploradas na área.</p>
+            <div class="viz-container" id="chart03"></div>
+        </div>
+
+        <!-- 04 -->
+        <div class="card" id="viz04">
+            <div class="card-header">
+                <span class="card-num">VIZ 04</span>
+                <h2>Docentes Permanentes × Artigos em Conferência</h2>
+            </div>
+            <p class="desc">Existe uma correlação positiva clara entre o tamanho do corpo docente permanente e o volume
+                de artigos publicados em conferências. Programas com mais docentes tendem a produzir mais, o que
+                confirma que o capital humano é o principal motor da produção científica. A dispersão crescente nos
+                extremos indica que outros fatores — como foco temático e nível do programa — também influenciam
+                significativamente a produtividade.</p>
+            <div class="viz-container" id="chart04"></div>
+        </div>
+
+        <!-- 05 -->
+        <div class="card" id="viz05">
+            <div class="card-header">
+                <span class="card-num">VIZ 05</span>
+                <h2>Produtividade de Elite — Qualis A1 por Aluno</h2>
+            </div>
+            <p class="desc">O gráfico revela a "escassez" de publicações no estrato mais alto e rigoroso do Qualis (A1).
+                A maioria expressiva dos programas possui uma média de publicação por aluno muito próxima a zero,
+                demonstrando o nível extremo de exigência e dificuldade para se publicar em veículos de impacto
+                internacional nesta área.</p>
+            <div class="viz-container" id="chart05"></div>
+        </div>
+
+        <!-- 06 -->
+        <div class="card" id="viz06">
+            <div class="card-header">
+                <span class="card-num">VIZ 06</span>
+                <h2>Artigos A2 por Aluno por Nível (Boxplot)</h2>
+            </div>
+            <p class="desc">A análise por boxplot confirma a hipótese de estratificação da CAPES: a mediana de
+                publicações A2 por aluno cresce de forma escalonada conforme o nível do programa se eleva. Os programas
+                de nível superior apresentam limites e dispersões deslocadas para cima, atestando o critério de
+                produtividade exigido para a progressão de nível.</p>
+            <div class="viz-container" id="chart06"></div>
+        </div>
+
+        <!-- 07 -->
+        <div class="card" id="viz07">
+            <div class="card-header">
+                <span class="card-num">VIZ 07</span>
+                <h2>Dissertações × Teses (Bubble Chart)</h2>
+            </div>
+            <p class="desc">Este gráfico cruza os dois principais produtos finais de formação. Programas com valor zero
+                no eixo Y (Teses) correspondem aos mestrados acadêmicos que ainda não abriram doutoramento. O tamanho
+                das esferas prova que programas que defendem teses e dissertações simultaneamente são os que geram maior
+                tração em artigos de conferência no país.</p>
+            <div class="viz-container" id="chart07"></div>
+        </div>
+
+        <!-- 08  -->
+        <div class="card card-wide" id="viz08">
+            <div class="card-header">
+                <span class="card-num">VIZ 08</span>
+                <h2>Top 10 Programas em Artigos de Conferência</h2>
+            </div>
+            <p class="desc">Ao isolarmos as 10 principais instituições no ranking de publicações em eventos,
+                identificamos os grandes polos de computação nacionais. Esses programas atuam como referências
+                volumétricas na disseminação de pesquisas rápidas e aplicadas em formato de anais de congressos.</p>
+            <div class="viz-container" id="chart08"></div>
+        </div>
+
+        <!-- 09 -->
+        <div class="card" id="viz09">
+            <div class="card-header">
+                <span class="card-num">VIZ 09</span>
+                <h2>Impacto Médio B1 vs. B2 por Aluno</h2>
+            </div>
+            <p class="desc">A comparação entre as produções per capita nos estratos intermediários B1 e B2 exibe uma
+                distribuição pulverizada e sem barreiras rígidas de cor. Isso sugere que a produtividade nestas faixas
+                medianas não é uma exclusividade de programas de elite, funcionando como um patamar comum atingido de
+                forma homogênea por várias frentes acadêmicas em consolidação.</p>
+            <div class="viz-container" id="chart09"></div>
+        </div>
+
+    </main>
+
+    <footer>
+        Dados: CAPES / FPCC2 — Nazareno Andrade &nbsp;·&nbsp; Visualizações com Vega-Lite
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/viz01.js"></script>
+    <script src="js/viz02.js"></script>
+    <script src="js/viz03.js"></script>
+    <script src="js/viz04.js"></script>
+    <script src="js/viz05.js"></script>
+    <script src="js/viz06.js"></script>
+    <script src="js/viz07.js"></script>
+    <script src="js/viz08.js"></script>
+    <script src="js/viz09.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
