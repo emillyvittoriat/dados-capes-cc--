@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+header {
+  background: #ffffff;
+  border-bottom: 2px solid #1a1a1a;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  color: #1a1a1a;
+  margin-bottom: .4rem;
+}
+
+header p {
+  color: #555555;
+  font-size: .9rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+  padding: .9rem 1rem;
+  background: #f5f5f5;
+  border-bottom: 1px solid #cccccc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 500;
+  color: #333333;
+  background: #ffffff;
+  border: 1px solid #bbbbbb;
+  padding: .25rem .75rem;
+  border-radius: 4px;
+  transition: background .15s, border-color .15s;
+}
+
+nav a:hover {
+  background: #e8e8e8;
+  border-color: #888888;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  padding: 1.5rem 1.5rem 1.25rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  margin-bottom: .75rem;
+}
+
+.card-num {
+  font-size: .7rem;
+  font-weight: 600;
+  color: #555555;
+  background: #f0f0f0;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  padding: .1rem .45rem;
+  white-space: nowrap;
+  margin-top: 3px;
+}
+
+.card h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+
+.card p.desc {
+  font-size: .84rem;
+  color: #444444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  border-left: 3px solid #cccccc;
+  padding-left: .75rem;
+}
+
+.viz-container {
+  width: 100%;
+}
+
+.card-wide {
+  grid-column: 1 / -1;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  color: #888888;
+  font-size: .78rem;
+  border-top: 1px solid #dddddd;
+}
